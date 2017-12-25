@@ -1,0 +1,69 @@
+{
+    "name": "infw/prooph-pdo-adapter",
+    "type": "library",
+    "description": "Prooph pdo event store adapter for In framework.",
+    "keywords": [
+        "infw",
+        "prooph-pdo-adapter"
+    ],
+    "homepage": "https://github.com/infw/prooph-pdo-adapter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kpicaza",
+            "email": "kpicaza@example.com",
+            "homepage": "https://github.com/kpicaza",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.0",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "prooph/event-sourcing": "^5.3",
+        "prooph/event-store": "^7.3",
+        "prooph/event-store-bus-bridge": "^3.1",
+        "prooph/pdo-event-store": "^1.6",
+        "prooph/pdo-snapshot-store": "^1.4",
+        "prooph/service-bus": "^6.2",
+        "prooph/snapshotter": "^2.1"
+    },
+    "require-dev": {
+        "fetzi/phpspec-watcher": "^1.0",
+        "henrikbjorn/phpspec-code-coverage": "^3.0",
+        "memio/spec-gen": "^0.6.1",
+        "phpspec/phpspec": "^3.0",
+        "phpunit/phpunit": "^5.7.21",
+        "phpstan/phpstan": "^0.6.4",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "InFw\\ProophPdo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "InFw\\ProophPdo\\": "tests"
+        }
+    },
+    "scripts": {
+        "watch-tests": "phpspec-watcher watch --ansi",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests --ansi",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests --ansi",
+        "spec-describe": "phpspec describe --ansi",
+        "spec-run": "phpspec run --format=pretty --ansi",
+        "inspect": "phpstan analyse -l 4 -c phpstan.neon src --ansi"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "zf": {
+            "config-provider": "InFw\\ProophPdo\\ConfigProvider"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
