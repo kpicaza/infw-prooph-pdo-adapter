@@ -19,7 +19,7 @@ class ProophEventRouterFactory
         array_walk(
             $config['event_router'],
             /** @var callable[] $handlers */
-            function (string $event, array $handlers) use ($router) {
+            function (array $handlers, string $event) use ($router) {
                 $router->route($event)->to($handlers);
             }
         );
