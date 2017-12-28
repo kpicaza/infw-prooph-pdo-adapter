@@ -20,7 +20,9 @@ class ProophEventRouterFactory
             $config['event_router'],
             /** @var callable[] $handlers */
             function (array $handlers, string $event) use ($router) {
-                $router->route($event)->to($handlers);
+                foreach ($handlers as $handler) {
+                    $router->route($event)->to($handler);
+                }
             }
         );
 
