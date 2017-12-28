@@ -34,7 +34,7 @@ class ConfigProvider
                     EventBus::class => ProophEventBusFactory::class,
                     EventStore::class => MySQLEventStoreFactory::class,
                     CommandBus::class => ProophCommandBusFactory::class,
-                    EventRouter::class => ProophEventRouterFactory::class,
+//                    EventRouter::class => ProophEventRouterFactory::class,
                 ],
             ],
             'prooph' => [
