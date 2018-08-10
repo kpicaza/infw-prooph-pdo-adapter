@@ -19,7 +19,6 @@
     "require": {
         "php" : "^7.0",
         "ext-pdo": "*",
-        "ext-pdo_sqlite": "*",
         "prooph/event-sourcing": "^5.3",
         "prooph/event-store": "^7.3",
         "prooph/event-store-bus-bridge": "^3.1",
